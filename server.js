@@ -9,16 +9,16 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join("../public")));
+app.use(express.static(path.join("./public")));
 app.use(express.json());
 
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "notes.html"));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 // read db.js from GET api/notes, return as JSON
@@ -43,7 +43,7 @@ app.post("/api/notes", function (req, res) {
     newNote.id = newNote.title.replace(/\s+/g, "").toLowerCase();
     // console.log(newNote);
     db.push(newNote);
-    fs.writeFileSync("../db/db.json", JSON.stringify(db) + `\n`, (err) => {
+    fs.writeFileSync("./db/db.json", JSON.stringify(db) + `\n`, (err) => {
         if (err) {
             return err;
         }
@@ -56,8 +56,10 @@ app.delete("/api/notes/:note", function (req, res) {
     var deleteNote = req.params.note;
     for (var i = 0; i < db.length; i++) {
         if (deleteNote === db[i].id) {
+            // console.log(db[i]);
             const remove = db.splice(i);
-            fs.writeFileSync("../db/db.json", JSON.stringify(db) + `\n`, (err) => {
+            // console.log(db);
+            fs.writeFileSync("./db/db.json", JSON.stringify(db) + `\n`, (err) => {
                 if (err) {
                     return err;
                 }
