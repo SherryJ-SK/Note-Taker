@@ -55,8 +55,6 @@ var handleNoteSave = function() {
     title: $noteTitle.val(),
     text: $noteText.val()
   };
-
-  console.log("Here");
   
   saveNote(newNote).then(function(data) {
     getAndRenderNotes();
@@ -86,6 +84,7 @@ var handleNoteDelete = function(event) {
 // Sets the activeNote and displays it
 var handleNoteView = function() {
   activeNote = $(this).data();
+  console.log(activeNote.title);
   renderActiveNote();
 };
 
