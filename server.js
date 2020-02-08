@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 var fs = require("fs");
-var dataJson = fs.readFileSync("../db/db.json", "utf8");
+var dataJson = fs.readFileSync("./db/db.json", "utf8");
 var db = JSON.parse(dataJson);
 
 var app = express();
