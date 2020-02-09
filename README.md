@@ -1,5 +1,7 @@
 # Note Taker 📝
 
+Heroku deploy URL: https://rocky-crag-83416.herokuapp.com/
+ 
 ## Description
 This application allows user write, review and delete note in the HTML page. All the information will be saved in a json file, when the user would like access to the data at any time, the informaiton can be retrive from the file.
 
@@ -15,7 +17,7 @@ To review the note which has been saved, click the note title on the left-side m
 > Delete note
 User can click the bin icon to remove the note from the HTML page and from the JSON file. Similar with 'Review note', when the button has been clicked, the note id will be identified and splice from the array in JSON file.
 
-## How to use
+## How to use (backend)
 1. Open the server.js in terminal, and install package.json
 ```shell
 $ npm install

@@ -1,9 +1,5 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
         "title": "Rainy day",
         "text": "today is a rainy day",
         "id": "rainyday"
